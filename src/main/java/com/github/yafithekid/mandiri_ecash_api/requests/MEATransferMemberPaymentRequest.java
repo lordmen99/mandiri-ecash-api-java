@@ -9,7 +9,7 @@ public class MEATransferMemberPaymentRequest {
     String token;
 
     public static class Builder {
-        MEATransferMemberPaymentRequest request;
+        MEATransferMemberPaymentRequest request = new MEATransferMemberPaymentRequest();
 
         public Builder from(String from){ request.setFrom(from); return this; }
 

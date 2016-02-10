@@ -5,7 +5,7 @@ public class MEABalanceInquiryRequest {
     String msisdn;
 
     public static class Builder {
-        MEABalanceInquiryRequest request;
+        MEABalanceInquiryRequest request = new MEABalanceInquiryRequest();
 
         public Builder msisdn(String msisdn){
             request.setMsisdn(msisdn); return this;
