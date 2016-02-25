@@ -1,22 +1,31 @@
 package com.github.yafithekid.mandiri_ecash_api.client;
 
 
+import com.github.yafithekid.mandiri_ecash_api.exceptions.MEAHttpException;
 import com.github.yafithekid.mandiri_ecash_api.exceptions.MEAIOException;
+import com.github.yafithekid.mandiri_ecash_api.exceptions.MEATokenExpiredException;
 import com.github.yafithekid.mandiri_ecash_api.requests.*;
 import com.github.yafithekid.mandiri_ecash_api.responses.*;
 
 public interface MEASyncRESTClient {
-    public MEALoginResponse login(MEALoginRequest meaLoginRequest) throws MEAIOException, MEAIOException;
+    MEALoginResponse login(MEALoginRequest meaLoginRequest)
+            throws MEAIOException,MEAHttpException;
 
-    public MEALogoutResponse logout(MEALogoutRequest meaLogoutRequest) throws MEAIOException;
+    MEALogoutResponse logout(MEALogoutRequest meaLogoutRequest)
+            throws MEAIOException,MEAHttpException;
 
-    public MEATransferMemberInquiryResponse transferMemberInquiry(MEATransferMemberInquiryRequest request) throws MEAIOException;
+    MEATransferMemberInquiryResponse transferMemberInquiry(MEATransferMemberInquiryRequest request)
+            throws MEAIOException,MEATokenExpiredException,MEAHttpException;
 
-    public MEATransferMemberPaymentResponse transferMemberPayment(MEATransferMemberPaymentRequest request) throws MEAIOException;
+    MEATransferMemberPaymentResponse transferMemberPayment(MEATransferMemberPaymentRequest request)
+            throws MEAIOException,MEATokenExpiredException,MEAHttpException;
 
-    public MEABalanceInquiryResponse balanceInquiry(MEABalanceInquiryRequest meaRequest) throws MEAIOException;
+    MEABalanceInquiryResponse balanceInquiry(MEABalanceInquiryRequest meaRequest)
+            throws MEAIOException,MEATokenExpiredException,MEAHttpException;
 
-    public MEAAccountHistoryResponse accountHistory(MEAAccountHistoryRequest request) throws MEAIOException;
+    MEAAccountHistoryResponse accountHistory(MEAAccountHistoryRequest request)
+            throws MEAIOException,MEATokenExpiredException,MEAHttpException;
 
-    public MEAOnStorePurchaseResponse onStorePurchaseRequest(MEAOnStorePurchaseRequest request) throws MEAIOException;
+    MEAOnStorePurchaseResponse onStorePurchaseRequest(MEAOnStorePurchaseRequest request)
+            throws MEAIOException,MEATokenExpiredException,MEAHttpException;
 }
